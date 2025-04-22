@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #f8f9fa;
+    --accent-color: #007bff;
+    --text-color: #212529;
+    --text-light: #495057;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --background-dark: #ffffff;
+    --background-light: #f8f9fa;
+    --hover-color: #e9ecef;
+    --code-background: #f8f9fa;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--text-color);
+    background-color: var(--background-dark);
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: var(--background-dark) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: var(--text-light) !important;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar .btn-outline-primary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background: transparent;
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.navbar .btn-outline-danger {
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+    background: transparent;
+}
+
+.navbar .btn-outline-danger:hover {
+    background-color: var(--danger-color);
+    color: var(--text-light);
+}
+
+/* Form Controls */
+.form-control {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: var(--background-dark);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 120, 212, 0.25);
+    color: var(--text-light);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0069d9;
+}
+
+/* Cards and Boxes */
+.card {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* Support Hero Section */
+#supportHero {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    padding: 4rem 0;
+}
+
+#supportHero a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#supportHero a:hover {
+    color: #0069d9;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item {
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+}
+
+.dropdown-divider {
+    border-color: var(--border-color);
+}
+
+/* Code blocks */
+code {
+    font-family: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    background-color: var(--code-background);
+    color: var(--text-light);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+/* Search box */
+.form-control.search-input {
+    background-color: var(--background-light);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.form-control.search-input:focus {
+    background-color: var(--background-dark);
+    border-color: var(--accent-color);
+}
+
+/* Support Wrapper */
+#supportWrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 150px;
+}
+
+/* Support Hero Input */
+#supportHero input{
+    padding: 20px 50px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+}
