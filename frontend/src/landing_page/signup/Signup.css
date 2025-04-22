@@ -3,12 +3,12 @@
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 140px);
-    background: var(--background-dark);
+    background: #f1f3f6; /* light background for contrast */
     padding: 2rem;
 }
 
 .auth-form {
-    background: var(--background-light);
+    background: #fff; /* pure white for form background */
     padding: 3rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
@@ -29,6 +29,7 @@
 }
 
 .auth-form h2 {
+    color: #222 !important; /* dark text for headings */
     text-align: center;
     color: var(--text-light);
     margin-bottom: 1rem;
@@ -41,6 +42,7 @@
 }
 
 .form-group label {
+    color: #222 !important; /* dark label text for better visibility */
     display: block;
     margin-bottom: 0.5rem;
     color: var(--text-color);
@@ -48,6 +50,8 @@
 }
 
 .form-control {
+    background-color: #f8f9fa !important; /* light form field background */
+    color: #222 !important; /* input text color */
     width: 100%;
     padding: 0.875rem;
     background-color: var(--background-dark);
@@ -66,6 +70,7 @@
 }
 
 .form-control::placeholder {
+    color: #6c757d !important; /* muted text for placeholder and secondary text */
     color: var(--text-muted);
 }
 
@@ -90,6 +95,10 @@
 }
 
 .auth-form p {
+    color: #222 !important; /* dark, visible text for secondary messages */
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    text-align: center;
     text-align: center;
     margin-top: 1.5rem;
     color: var(--text-muted);

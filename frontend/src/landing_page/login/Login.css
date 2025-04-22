@@ -30,7 +30,7 @@
 
 .auth-form h2 {
     text-align: center;
-    color: var(--primary-color);
+    color: #222; /* dark text for headings */
     margin-bottom: 2rem;
     font-weight: 700;
     font-size: 2rem;
@@ -54,7 +54,7 @@
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background-color: var(--light-gray);
+    background-color: #f8f9fa; /* light form field background */
 }
 
 .form-control:focus {
@@ -65,14 +65,14 @@
 }
 
 .form-control::placeholder {
-    color: #a0aec0;
+    color: #6c757d; /* muted text for placeholder and secondary text */
 }
 
 .btn-primary {
     width: 100%;
     padding: 0.875rem;
     background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 100%);
-    color: white;
+    color: #222; /* input text color */
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -112,14 +112,15 @@
 }
 
 .forgot-password a {
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    color: #111 !important;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
 .forgot-password a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 /* Responsive adjustments */

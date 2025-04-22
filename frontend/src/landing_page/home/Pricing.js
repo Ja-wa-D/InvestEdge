@@ -6,9 +6,9 @@ function Pricing() {
         <div className='Container'>
             <div className='row p-5'>
                 <div className='col-6 p-5'>
-                    <h1 className='mx-5 mt-3' >Unbeatable pricing</h1>
-                    <p className='mt-3 text-muted mb-2 mx-5'> We pioneered the concept of discount broking and price<br></br>transparency in India. Flat fees and no hidden charges. </p>
-                    <Link to='/pricing'className="mx-5 ml-5"style={{textDecoration:"None"}}>See pricing <i class="fa fa-angle-double-right" aria-hidden="true"></i></Link>
+                    <h1 className='mx-5 mt-3' >News Moves Markets. AI Moves First.</h1>
+                    <p className='mt-3 text-muted mb-2 mx-5'> Don’t just read the headlines—act on them. InvestEdge’s AI<br></br> analyzes breaking news, earnings reports, and global<br></br> events in real time, turning chaos into actionable trading signals. </p>
+                    <Link to='/pricing'className="mx-5 ml-5"style={{textDecoration:"None"}}>See Live News Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></Link>
 
 
                 </div>

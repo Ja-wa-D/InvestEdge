@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from './Hero';
 import LeftSection from './LeftSection';
 import RightSection from './RightSection';
+import LeftSectionCopy from './LeftSectionCopy';
 import Universe from './Universe';
 
 
@@ -12,6 +13,7 @@ function ProductPage() {
         <Hero />
         <LeftSection />
         <RightSection />
+        <LeftSectionCopy />
         <Universe />
 
         </>

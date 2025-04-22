@@ -37,10 +37,7 @@ function Awards() {
             </div>
 
         </div>
-        <center>
-                <h1 className='mb-5'>NEWS/SEARCH FOR/LIST OF STOCKS</h1>
-               
-        </center></>
+        </>
     );
 }
 
