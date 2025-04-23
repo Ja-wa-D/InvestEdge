@@ -32,7 +32,7 @@ function Stats() {
 
                     {/* <Link to=" /products" className='my-3 mx-3' style={{textDecoration:"None"}}>Explore our products <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                     </Link> */}
-                    <Link to='/'style={{textDecoration:"None"}}>See InvestEdge in Action <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    <Link to='/dashboard' style={{textDecoration:"None"}}>See InvestEdge in Action <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </Link>
                 </div>
                 
