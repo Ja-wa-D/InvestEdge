@@ -16,7 +16,7 @@ function Footer() {
                     <p>Company</p>  
                     <Link to='/about'className='text-muted' style={{textDecoration:"None"}}>About</Link><br/>                    
                         <Link to='/products'className='text-muted' style={{textDecoration:"None"}}>Products</Link><br/>
-                        <Link to='/pricing'className='text-muted' style={{textDecoration:"None"}}>Pricing</Link><br/>
+                        <Link to='/news'className='text-muted' style={{textDecoration:"None"}}>LiveNews</Link><br/>
                         <a href=''className='text-muted' style={{textDecoration:"None"}}>Open Source</a><br/>
                     <a href=''className='text-muted' style={{textDecoration:"None"}}>Tech</a>   <br/>                                
                 </div>

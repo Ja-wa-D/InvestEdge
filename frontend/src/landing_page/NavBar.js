@@ -41,7 +41,7 @@ function NavBar() {
                                 More
                             </a>
                             <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" to="/pricing">Live News</Link></li>
+                                <li><Link className="dropdown-item" to="/news">Live News</Link></li>
                                 {/* <li><a className="dropdown-item" href="#">Another action</a></li> */}
                                 <li><hr className="dropdown-divider" /></li>
                                 <li><Link className="dropdown-item" to="/support">Support</Link></li>
