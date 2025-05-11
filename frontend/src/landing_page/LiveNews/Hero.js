@@ -122,15 +122,15 @@ function Hero() {
         </Box>
 
         {error && (
-          <Typography color="error" align="center" sx={{ mb: 4 }}>
+          <Typography color="error" align="center" sx={{ mb: 3 }}>
             {error}
           </Typography>
         )}
 
-        <Grid container spacing={2}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           {loading
             ? Array.from(new Array(4)).map((_, index) => (
-                <Grid item xs={12} md={6} key={index}>
+                <Box key={index}>
                   <Card sx={{ height: '100%' }}>
                     <CardContent>
                       <Skeleton variant="text" height={32} sx={{ mb: 1 }} />
@@ -139,10 +139,10 @@ function Hero() {
                       <Skeleton variant="text" height={20} width="60%" />
                     </CardContent>
                   </Card>
-                </Grid>
+                </Box>
               ))
             : trendingNews.map((article, index) => (
-                <Grid item xs={12} md={6} key={index}>
+                <Box key={index}>
                   <Card
                     elevation={2}
                     sx={{
@@ -208,10 +208,9 @@ function Hero() {
                       </Button>
                     </CardActions>
                   </Card>
-                </Grid>
+                </Box>
               ))}
-        </Grid>
-
+        </Box>
     </Box>
   );
 }
