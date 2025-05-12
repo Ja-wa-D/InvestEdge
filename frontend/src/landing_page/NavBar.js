@@ -36,7 +36,7 @@ function NavBar() {
                         <li className="nav-item mx-1">
                             <Link className="nav-link active" to="/products">Product</Link>
                         </li>
-                        <li className="nav-item mx-1"><Link className="nav-link active" to="/login" >Login</Link></li>
+                        {/* <li className="nav-item mx-1"><Link className="nav-link active" to="/login" >Login</Link></li> */}
                         <li className="nav-item dropdown mx-1">
                             <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 More
