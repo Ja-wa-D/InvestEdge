@@ -3,6 +3,7 @@ import Hero from './Hero';
 import LeftSection from './LeftSection';
 import RightSection from './RightSection';
 import LeftSectionCopy from './LeftSectionCopy';
+import RightSectionCopy from './RightSectionCopy';
 import Universe from './Universe';
 
 
@@ -14,6 +15,7 @@ function ProductPage() {
         <LeftSection />
         <RightSection />
         <LeftSectionCopy />
+        <RightSectionCopy />
         <Universe />
 
         </>
