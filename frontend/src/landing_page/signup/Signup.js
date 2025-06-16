@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../../store/useAuthStore.js';
+import { toast } from 'react-hot-toast';
 import './Signup.css';
 
 function Signup() {
     const [formData, setFormData] = useState({
-        name: '',
+        fullName: '',
         email: '',
         password: '',
         confirmPassword: ''
     });
+
     const navigate = useNavigate();
+    const { signup, isSigningUp } = useAuthStore();
 
     const handleChange = (e) => {
         setFormData({
@@ -18,22 +22,24 @@ function Signup() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (formData.password !== formData.confirmPassword) {
-            alert('Passwords do not match!');
+            toast.error('Passwords do not match');
             return;
         }
-        
-        // Store user data in localStorage (for dummy authentication)
-        const userData = {
-            name: formData.name,
-            email: formData.email,
-            password: formData.password
-        };
-        localStorage.setItem('dummyUser', JSON.stringify(userData));
-        alert('Signup successful! Please login.');
-        navigate('/login');
+
+        try {
+            await signup({
+                fullName: formData.fullName,
+                email: formData.email,
+                password: formData.password
+            });
+            navigate('/dashboard');
+        } catch (error) {
+            console.error('Signup failed:', error);
+        }
     };
 
     return (
@@ -45,13 +51,13 @@ function Signup() {
                 </p>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="name">Full Name</label>
+                        <label htmlFor="fullName">Full Name</label>
                         <input
                             type="text"
-                            id="name"
-                            name="name"
+                            id="fullName"
+                            name="fullName"
                             placeholder="Enter your full name"
-                            value={formData.name}
+                            value={formData.fullName}
                             onChange={handleChange}
                             required
                             className="form-control"
@@ -96,8 +102,8 @@ function Signup() {
                             className="form-control"
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary">
-                        Create Account
+                    <button type="submit" className="btn btn-primary" disabled={isSigningUp}>
+                        {isSigningUp ? 'Creating...' : 'Create Account'}
                     </button>
                 </form>
                 <p className="mt-4 text-center">

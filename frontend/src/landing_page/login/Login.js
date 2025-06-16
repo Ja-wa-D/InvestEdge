@@ -1,35 +1,25 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../../store/useAuthStore.js';
+import { toast } from 'react-hot-toast';
 import './Login.css';
 
 function Login() {
-    const [formData, setFormData] = useState({
-        email: '',
-        password: ''
-    });
+    const [formData, setFormData] = useState({ email: '', password: '' });
     const navigate = useNavigate();
+    const { login, isLoggingIn } = useAuthStore();
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Dummy authentication - in real app, this would be an API call
-        const dummyUser = localStorage.getItem('dummyUser');
-        if (dummyUser) {
-            const user = JSON.parse(dummyUser);
-            if (user.email === formData.email && user.password === formData.password) {
-                localStorage.setItem('isAuthenticated', 'true');
-                navigate('/');
-            } else {
-                alert('Invalid credentials');
-            }
-        } else {
-            alert('User not found. Please sign up first.');
+        try {
+            await login(formData);
+            navigate('/dashboard');
+        } catch (error) {
+            toast.error("Login failed. Please check your credentials.");
         }
     };
 
@@ -70,8 +60,8 @@ function Login() {
                     <div className="forgot-password">
                         <Link to="/forgot-password">Forgot password?</Link>
                     </div>
-                    <button type="submit" className="btn btn-primary">
-                        Sign In
+                    <button type="submit" className="btn btn-primary" disabled={isLoggingIn}>
+                        {isLoggingIn ? 'Signing In...' : 'Sign In'}
                     </button>
                 </form>
                 <p className="mt-4 text-center">
