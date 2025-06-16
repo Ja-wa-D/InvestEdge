@@ -6,7 +6,7 @@ const {protectRoute} = require("../Middleware/Auth.Middleware");
 
 
 router.post("/signup",signup);
-router.get("/checkAuth",protectRoute,checkAuth);
+router.get("/checkauth",protectRoute,checkAuth);
 router.post("/login",login);
 router.post("/logout",logout);
 module.exports = router;
