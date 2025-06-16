@@ -35,7 +35,7 @@ function NavBar() {
                     <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ "--bs-scroll-height": "100px" }}>
                         {authUser ? (
                             <li className="nav-item mx-1">
-                                <Link className="nav-link active" to="/dashboard">Dashboard</Link>
+                                <Link className="nav-link active" to="./dashboard">Dashboard</Link>
                             </li>
                         ) : (
                             <li className="nav-item mx-1">

@@ -12,21 +12,32 @@ import Login from './landing_page/login/Login';
 import NavBar from './landing_page/NavBar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/NotFound';
+import Dashboard from './dashboard/Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <NavBar />
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path='/signup' element={<Signup />} />
-      <Route path='/login' element={<Login />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/products" element={<ProductPage />} />
-      <Route path="/news" element={<NewsPage />} />
-      <Route path='support' element={<SupportPage />} />
-      <Route path='*' element={<NotFound />} />   
-    </Routes>   
-    <Footer />  
+      <Route path="/dashboard/*" element={<Dashboard />} />
+      <Route
+        path="*"
+        element={
+          <>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/login' element={<Login />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/products" element={<ProductPage />} />
+              <Route path="/news" element={<NewsPage />} />
+              <Route path='support' element={<SupportPage />} />
+              <Route path='*' element={<NotFound />} />   
+            </Routes>   
+            <Footer />
+          </>
+        }
+      />
+    </Routes>
   </BrowserRouter>
 );
