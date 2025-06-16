@@ -13,6 +13,7 @@ import {
 import { Doughnut, Line } from 'react-chartjs-2';
 import { Box, Container, Paper, Tooltip, Snackbar, Alert } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useAuthStore } from '../store/useAuthStore';
 import { Link, Routes, Route, useLocation } from "react-router-dom";
 import {
   BarChartOutlined,
@@ -47,6 +48,7 @@ const GeneralContext = createContext();
 const DashboardMenu = () => {
   const theme = useTheme();
   const location = useLocation();
+  const { authUser } = useAuthStore();
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const profileRef = useRef(null);
@@ -220,7 +222,9 @@ const watchlist = [
 
 // TopBar Component
 const TopBar = () => {
+  const { authUser } = useAuthStore();
   return (
+
     <div style={{
       padding: "15px 20px",
       backgroundColor: "#fff",
@@ -256,7 +260,7 @@ const TopBar = () => {
         </div>
       </div>
       <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <span style={{ fontSize: "0.9rem", color: "#666" }}>Welcome, User</span>
+        <span style={{ fontSize: "0.9rem", color: "#666" }}>Welcome, {authUser?.fullName || 'User'}</span>
       </div>
     </div>
   );
